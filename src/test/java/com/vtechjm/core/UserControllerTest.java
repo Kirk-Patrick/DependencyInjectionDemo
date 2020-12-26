@@ -1,11 +1,9 @@
 package com.vtechjm.core;
 
-import com.vtechjm.core.services.IUserService;
+import com.vtechjm.core.services.UserService;
 import com.vtechjm.core.services.models.User;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mockito;
-import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -21,11 +19,11 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 @SpringBootTest
 @AutoConfigureMockMvc
-public class UserControllerTest {
+class UserControllerTest {
     @Autowired
     private MockMvc mvc;
     @MockBean
-    private IUserService userServiceMock;
+    private UserService userServiceMock;
     @Test
     public void itShouldReturnAUser() throws Exception {
         //Arrange
